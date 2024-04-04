@@ -9,6 +9,22 @@ const name = "Stacey";
   seoDesc="Software Engineer with expertise in React, Angular, Astro, and Node.js"
 >
   <div class="w-8/12 md:w-6/12 mx-auto">
-    <h1 class="text-5xl md:text-6xl text-center">Hey 👋🏽, I am Stacey Graham</h1>
+    <h1 class="text-5xl md:text-6xl text-center">Hey 👋🏽, I'm Stacey</h1>
+    <div id="typed-strings">
+      <p>I am a <strong>Software Engineer</strong></p>
+      <p>I <em>work</em> with Angular, React, node.js, JS, Java, and Python</p>
+    </div>
   </div>
+
+  <div class="text-center mt-6"><span id="typed"></span></div>
 </MainLayout>
+
+<script>
+  import Typed from "typed.js";
+
+  var typed = new Typed('#typed', {
+    stringsElement: '#typed-strings',
+    typeSpeed: 60,
+    loop: true,
+  });
+</script>
