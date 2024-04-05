@@ -1,0 +1,48 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+
+export async function getStaticPaths() {
+  return [
+    {
+      params: { projects: "pantry_chef" },
+      props: {
+        name: "Pantry Chef",
+        desc: "A recipe app that allows users to search for meal recipes using the ingredients they have on hand.",
+        info: "Built using HTML, CSS, JavaScript, Bootstrap, jQuery UI, Spoonacular API, and MealDB API",
+        url: "https://pantry-chef.surge.sh/",
+        repo: "https://github.com/StashaG/final-phase-1",
+      },
+    },
+    {
+      params: { projects: "random_quotes" },
+      props: {
+        title: 'Random Quote Generator',
+        info: 'An app that displays random famous quotes each time a button is clicked. This app utilizes DOM manipulation and arrays.',
+        info2: 'Built using HTML, CSS, and JavaScript.',
+        url: 'https://stashag.github.io/Random-Quote-Generator/',
+        repo: 'https://github.com/StashaG/Random-Quote-Generator',
+      },
+    },
+  ];
+}
+
+const { projects } = Astro.params;
+const { name, desc, info, url, repo } = Astro.props;
+---
+
+<MainLayout>
+  <section class="mx-auto w-3/6">
+    <img
+      src=`/images/${projects}.jpg`
+      width="600"
+      height="600"
+      class="rounded-sm"
+    />
+    <h1 class="font-bold mt-4">Project: {name}</h1>
+    <p>{desc}</p>
+    <p>{info}</p>
+    <p>{url}</p>
+    <p>{repo}</p>
+    <section></section>
+  </section>
+</MainLayout>
